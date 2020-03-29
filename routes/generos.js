@@ -16,4 +16,18 @@ router.get('/', (req, res) => {
         })
 })
 
+
+//Crear un genero
+router.post('/', (req, res) => {
+    Genero.create({...req.body})
+        .then(genero => res.status(201).send(genero))
+        .catch(err => {
+            console.log(err)
+            res.status(500).send({
+                message: 'Ha habido un problema al crear el genero'
+            });
+        })
+})
+
+
 module.exports = router;
