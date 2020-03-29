@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Pelicula.associate = function(models) {
     // associations can be defined here
+    //Una pelicula pertenece a un genero
+    Pelicula.belongsTo(models.Genero);
   };
   return Pelicula;
 };
