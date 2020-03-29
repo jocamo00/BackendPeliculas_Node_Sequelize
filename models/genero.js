@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Genero.associate = function(models) {
     // associations can be defined here
+    //Un genero puede tener muchas peliculas
+    Genero.hasMany(models.Pelicula);
   };
   return Genero;
 };
